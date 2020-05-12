@@ -1,0 +1,7 @@
+{
+  "name": "places-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
