@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="container">
+    <form class="box" action="FORM.html" method="post">
+      <ion-grid>
 
+        <ion-row class="ion-align-items-center" color="primary">
+          <ion-col></ion-col>
+          <ion-col size-md="6" size-lg="4" size-sm="6" size-xs="6" size-xl="4">
+            <div text-center>
+              <h3>Login Here</h3>
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+              <ion-item>
+                <ion-input name="email" type="email" placeholder="Email" [(ngModel)]="form.email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="form.password">
+                </ion-input>
+              </ion-item>
+            </div>
+            <div>
+              <ion-button size="large" type="submit" (click)="signIn()" expand="block">Register</ion-button>
+            </div>
+            <div>
+              Dont have an account? please <a routerLink='/register'>
+                register</a>
+            </div>
+
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
 </ion-content>
