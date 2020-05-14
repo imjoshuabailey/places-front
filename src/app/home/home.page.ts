@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  latitude = -28.68352;
+  longitude = -147.20785;
+  mapType = 'satellite';
+
   constructor() {}
 
 }

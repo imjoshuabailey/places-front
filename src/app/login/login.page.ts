@@ -23,7 +23,8 @@ export class LoginPage implements OnInit {
     this._userService.loginUser(this.form).subscribe((res: any) => {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
-      this._userService.firstName = res.firstName;
+      console.log(res.token)
+      this._userService.firstName = res.userData.firstName;
       console.log(this._userService.firstName, "is logged in")
       this._userService.isLoggedIn = true;
     })
