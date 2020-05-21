@@ -30,6 +30,8 @@ npm-debug.log*
 /plugins
 /www
 
+
 # API keys
 key.service.ts 
 key.service.spec.ts 
+environment.ts

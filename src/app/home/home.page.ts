@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { KeyService } from '../key.service';
+import { MapService } from '../map.service'
+
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  latitude = -28.68352;
-  longitude = -147.20785;
+ 
+  zoom = 14;
   mapType = 'satellite';
 
-  constructor() {}
+  constructor(public _keyService: KeyService, private _mapService: MapService) {}
+
+  ngOnInit() {
+    this._mapService.getPosition()
+  }
 
 }

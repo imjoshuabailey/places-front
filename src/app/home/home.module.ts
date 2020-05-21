@@ -4,7 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { HomePage } from './home.page';
-import { KeyService } from '../key.service'
+import { KeyService } from '../key.service';
+import { environment } from '../../environments/environment'
 
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -17,7 +18,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: ""
+      apiKey: environment.MAPS_KEY
     
     })
   ],

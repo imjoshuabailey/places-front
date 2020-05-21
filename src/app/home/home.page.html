@@ -1,13 +1,8 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <agm-map [latitude]='latitude' [longitude]='longitude'
+  <agm-map [latitude]='_mapService.latitude' [zoom]='zoom' [longitude]='_mapService.longitude'
       [mapTypeId]='mapType'>
     </agm-map>
+
+
+    
 </ion-content>
