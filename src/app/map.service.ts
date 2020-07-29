@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { environmentB } from '../environments/environmentB'
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
 
+  api_key = environmentB.MAPS_KEY
   latitude: number;
   longitude: number;
   
@@ -25,5 +27,5 @@ export class MapService {
   }
 }
 
-
-// https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=geometry,formatted_address,name,opening_hours,rating&locationbias=point:***COORDS_HERE***&key=YOUR_API_KEY
+//api call to search for places neaby
+// https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=***USER_INPUT***&inputtype=textquery&fields=geometry,formatted_address,name,opening_hours,rating&locationbias=circle:2000@***COORDS_HERE***&key=YOUR_API_KEY

@@ -21,16 +21,7 @@ export class HomePage implements OnInit {
   }
 
   markers: Marker[] = [
-    {
-      lat: 32.745658,
-      long: -117.129482,
-      
-    },
-    {
-      lat: 32.832858,
-      long: -117.271382,
-      
-    }
+    
   ]
 
 
