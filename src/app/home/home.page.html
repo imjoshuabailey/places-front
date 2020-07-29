@@ -1,8 +1,24 @@
-<ion-content>
-  <agm-map [latitude]='_mapService.latitude' [zoom]='zoom' [longitude]='_mapService.longitude'
-      [mapTypeId]='mapType'>
-    </agm-map>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    ** add search bar
+  </ion-toolbar>
+</ion-header>
 
+<section class="container">
+  <ion-content>
+      <section class="map">
+        <agm-map 
+          [latitude]='_mapService.latitude' 
+          [zoom]='zoom' 
+          [longitude]='_mapService.longitude'
+          [mapTypeId]='mapType'>
 
-    
-</ion-content>
+          <agm-marker *ngFor="let mark of markers" 
+            [latitude]="mark.lat"
+            [longitude]="mark.long" >
+          </agm-marker>
+        </agm-map>
+      </section>
+  </ion-content>
+  
+</section>

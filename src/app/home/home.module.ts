@@ -4,8 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { HomePage } from './home.page';
-import { KeyService } from '../key.service';
-import { environment } from '../../environments/environment'
+import { environmentB } from '../../environments/environmentB'
 
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -18,17 +17,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.MAPS_KEY
+      apiKey: environmentB.MAPS_KEY
     
     })
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {
-
-  key = this._keyService.mapsKey
-
-  constructor(private _keyService: KeyService) {}
-
-
-}
+export class HomePageModule {}

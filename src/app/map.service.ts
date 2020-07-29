@@ -22,11 +22,8 @@ export class MapService {
       console.log('Error getting location', error);
     });
 
-    let watch = this._geolocation.watchPosition();
-    watch.subscribe((data) => {
-      // data can be a set of coordinates, or an error (if an error occurred).
-      // data.coords.latitude
-      // data.coords.longitude
-    });
   }
 }
+
+
+// https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=geometry,formatted_address,name,opening_hours,rating&locationbias=point:***COORDS_HERE***&key=YOUR_API_KEY
