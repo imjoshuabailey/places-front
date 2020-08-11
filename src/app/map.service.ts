@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { environmentB } from '../environments/environmentB'
+import { environmentB } from '../environments/environmentB';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +11,31 @@ export class MapService {
   api_key = environmentB.MAPS_KEY
   latitude: number;
   longitude: number;
+  places: object;
   
-  constructor(private _geolocation: Geolocation) { }
+  constructor(private _geolocation: Geolocation, private _http: HttpClient) { }
 
   
   getPosition() {
-    this._geolocation.getCurrentPosition().then((resp) => {
+    return this._geolocation.getCurrentPosition().then((resp) => {
       this.latitude = resp.coords.latitude
       this.longitude = resp.coords.longitude
-      console.log("lat", this.latitude)
-      console.log("lon", this.longitude)
+      console.log("lat:", this.latitude)
+      console.log("lon:", this.longitude)
     }).catch((error) => {
       console.log('Error getting location', error);
     });
 
+  }
+
+  textSearch(userInput) {
+    return this._http.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${userInput}&inputtype=textquery&fields=photos,formatted_address,name,geometry&locationbias=circle:2000@${this.latitude},${this.longitude}&key=${this.api_key}`).subscribe((res: any) => {
+      this.places = res.results;
+      console.log("places nearby:", this.places)
+      
+    }, err => {
+      //handle errors
+    });
   }
 }
 

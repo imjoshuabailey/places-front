@@ -1,7 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-input class="searchBar" clearInput placeholder="Enter search here"></ion-input>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button (click)="searchButtonClick()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+  <div *ngIf="searchClick === true">
+    <ion-buttons slot="primary">
+    <ion-button (click)="searchSubmit()">
+      <ion-icon slot="icon-only" name="search-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-input [(ngModel)]="userSearch" placeholder="Search"></ion-input>
+    </ion-buttons>
+  </div>
 </ion-header>
 
 <section class="container">

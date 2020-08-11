@@ -4,8 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { HomePage } from './home.page';
-import { environmentB } from '../../environments/environmentB'
-
+import { environmentB } from '../../environments/environmentB';
 import { HomePageRoutingModule } from './home-routing.module';
 
 

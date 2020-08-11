@@ -12,6 +12,8 @@ export class HomePage implements OnInit {
  
   zoom = 14;
   mapType = 'roadmap';
+  searchClick = false;
+  userSearch: string = null
   
 
   constructor(public _mapService: MapService) {}
@@ -24,6 +26,23 @@ export class HomePage implements OnInit {
     
   ]
 
+  searchButtonClick() {
+    console.log("search clicked")
+    if(this.searchClick === false) {
+      return this.searchClick = true
+    }else{
+      return this.searchClick = false
+    }
+
+  }
+
+  searchSubmit() {
+    if(this.userSearch != null) {
+      console.log(this.userSearch)
+      this._mapService.textSearch(this.userSearch)
+      this.userSearch = null
+    }
+  }
 
 
 }
